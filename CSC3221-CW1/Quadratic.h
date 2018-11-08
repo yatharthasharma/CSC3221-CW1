@@ -16,7 +16,7 @@ public:
 	Quadratic operator+=(Quadratic&  rhs);
 	Quadratic operator-=(Quadratic&  rhs);
 	friend istream &operator>>(istream &inStream, Quadratic& q);
-	friend ostream &operator<<(istream &inStream, Quadratic& q);
+	friend ostream &operator<<(ostream &inStream, Quadratic& q);
 private:
 	//const int exponents[3] = {1, 2, 3};
 	int exponents[3] = { 1,2,3 };

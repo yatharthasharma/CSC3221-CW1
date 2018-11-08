@@ -66,7 +66,7 @@ istream &operator>>(istream &inStream, Quadratic & q)
 	return inStream;
 }
 
-ostream & operator<<(istream & inStream, Quadratic & q)
+ostream & operator<<(ostream & outStream, Quadratic & q)
 {
-	// TODO: insert return statement here
+	return outStream;
 }
