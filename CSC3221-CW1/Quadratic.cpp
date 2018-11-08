@@ -8,10 +8,6 @@ Quadratic::Quadratic(int a, int b, int c)
 }
 
 
-Quadratic::~Quadratic()
-{
-}
-
 double Quadratic::evaluate(double x)
 {
 	return (coeffecients[2] * x * x) + (coeffecients[1] * x) + coeffecients[0];
@@ -50,12 +46,18 @@ bool Quadratic::operator!=(Quadratic& rhs)
 
 Quadratic Quadratic::operator+=(Quadratic& rhs)
 {
-	return Quadratic(coeffecients[0] + rhs.coeffecient(0), coeffecients[1] + rhs.coeffecient(1), coeffecients[2] + rhs.coeffecient(2));
+	coeffecients[0] += rhs.coeffecient(0);
+	coeffecients[1] += rhs.coeffecient(1);
+	coeffecients[2] += rhs.coeffecient(2);
+	return Quadratic(coeffecients[0], coeffecients[1], coeffecients[2]);
 }
 
 Quadratic Quadratic::operator-=(Quadratic& rhs)
 {
-	return Quadratic(coeffecients[0] - rhs.coeffecient(0), coeffecients[1] - rhs.coeffecient(1), coeffecients[2] - rhs.coeffecient(2));
+	coeffecients[0] -= rhs.coeffecient(0);
+	coeffecients[1] -= rhs.coeffecient(1);
+	coeffecients[2] -= rhs.coeffecient(2);
+	return Quadratic(coeffecients[0], coeffecients[1], coeffecients[2]);
 }
 
 istream &operator>>(istream &inStream, Quadratic & q)
@@ -63,6 +65,7 @@ istream &operator>>(istream &inStream, Quadratic & q)
 	int x, y, z = 0;
 	char separator = ',';
 	inStream >> x >> separator >> y >> separator >> z;
+	q = Quadratic(x, y, z);
 	return inStream;
 }
 

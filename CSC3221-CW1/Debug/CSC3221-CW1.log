@@ -1,7 +1,2 @@
 ﻿  Polynomial.cpp
-c:\users\yatha\source\repos\csc3221-cw1\csc3221-cw1\polynomial.cpp(24): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\yatha\source\repos\csc3221-cw1\csc3221-cw1\polynomial.cpp(30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\yatha\source\repos\csc3221-cw1\csc3221-cw1\polynomial.cpp(56): error C2512: 'Polynomial': no appropriate default constructor available
-  c:\users\yatha\source\repos\csc3221-cw1\csc3221-cw1\polynomial.cpp(56): note: No constructor could take the source type, or constructor overload resolution was ambiguous
-  Quadratic.cpp
-  Generating Code...
+  CSC3221-CW1.vcxproj -> C:\Users\yatha\source\repos\CSC3221-CW1\Debug\CSC3221-CW1.exe

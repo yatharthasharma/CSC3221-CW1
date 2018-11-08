@@ -6,7 +6,6 @@ class Quadratic
 {
 public:
 	Quadratic(int a, int b, int c);
-	~Quadratic();
 	double evaluate(double x);
 	int coeffecient(int x);
 	Quadratic operator+(Quadratic& rhs);
