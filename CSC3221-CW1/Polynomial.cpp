@@ -4,6 +4,11 @@ Polynomial::Polynomial()
 {
 }
 
+/*Polynomial::Polynomial(Polynomial & h)			// copy constructor - not implemented properly
+{
+	*this = h;
+}*/
+
 Polynomial::Polynomial(int maxpower, int* allcoeffecients) {
 	power = maxpower;
 	totalValue = 0;
@@ -11,10 +16,10 @@ Polynomial::Polynomial(int maxpower, int* allcoeffecients) {
 	for (int i = 0; i <= power; ++i)
 		coeffecients[i] = allcoeffecients[i];
 }
-
+//Destructor - not implemented properly
 Polynomial::~Polynomial()
 {
-	delete [] coeffecients;
+	//delete [] coeffecients;
 }
 
 int Polynomial::coeffecient(int x)
@@ -54,7 +59,7 @@ Polynomial Polynomial::operator-(Polynomial & rhs)
 	return Polynomial(polyPower, difference);
 }
 
-Polynomial Polynomial::operator*(Polynomial & rhs)
+Polynomial Polynomial::operator*(Polynomial & rhs)						// not implemented properly
 {
 	int* x = 0;
 	return Polynomial(0, x);
@@ -87,10 +92,15 @@ bool Polynomial::operator!=(Polynomial & rhs)
 	}
 	return false;
 }
-Polynomial Polynomial::operator=(Polynomial & rhs)
+/*Polynomial Polynomial::operator=(Polynomial & rhs)			// assignment operator - not implemented properly
 {
-	return Polynomial(this->power, this->coeffecients);
-}
+	int* newcoefficients = new int[power+1];
+	int newpower = this->power;
+	for (int i = 0; i <= power; i++) {
+		newcoefficients[i] = coeffecients[i];
+	}
+	return Polynomial(newpower, newcoefficients);
+}*/
 int Polynomial::maxPower(int power, Polynomial & rhs) {
 	if (power >= rhs.power)
 		return power;
@@ -104,23 +114,22 @@ int Polynomial::calcPower(int x, int power)
 	else
 		return 1;
 }
-// MIGHT BE DIFFERENT 
+
 Polynomial Polynomial::operator+=(Polynomial & rhs)
 {
 	int polyPower = maxPower(power, rhs);
-	int* sum = new int[polyPower];
+	int* sum = new int[polyPower+1];
 	for (int i = 0; i <= power; i++)
 		sum[i] = coeffecients[i];
 	for (int i = 0; i <= rhs.power; i++)
 		sum[i] += rhs.coeffecients[i];
-
 	return Polynomial(polyPower, sum);
 }
-// MIGHT BE DIFFERENT
+
 Polynomial Polynomial::operator-=(Polynomial & rhs)
 {
 	int polyPower = maxPower(power, rhs);
-	int* difference = new int[polyPower];
+	int* difference = new int[polyPower+1];
 	for (int i = 0; i <= power; i++)
 		difference[i] = coeffecients[i];
 	for (int i = 0; i <= rhs.power; i++)
@@ -128,7 +137,7 @@ Polynomial Polynomial::operator-=(Polynomial & rhs)
 	return Polynomial(polyPower, difference);
 }
 
-Polynomial Polynomial::operator*=(Polynomial & rhs)
+Polynomial Polynomial::operator*=(Polynomial & rhs)				// not implemented fully
 {
 	int* x = 0;
 	return Polynomial(0, x);

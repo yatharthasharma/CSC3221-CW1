@@ -90,7 +90,39 @@ int main() {
 	Polynomial diffOfPolynomial = p1 - p2;									// subtracting second polynomial from the first using overloaded - operator
 	cout << endl << "Sum and difference of Polynomials resulted in these two Polynomials respectively - " << endl;
 	cout << sumOfPolynomial << endl;										// printing the new polynomial
-	cout << diffOfPolynomial << endl;										// printing the new quadratic
+	cout << diffOfPolynomial << endl;										// printing the new polynomial
+
+	// TESTING USAGE OF == and != operators
+	Polynomial ptest1;
+	cin >> ptest1;
+	Polynomial ptest2;
+	cin >> ptest2;
+	Polynomial ptest3;
+	cin >> ptest3;
+	cout << "FIRST POLYNOMIAL: " << ptest1;
+	cout << "SECOND POLYNOMIAL: " << ptest2;
+	cout << "THIRD POLYNOMIAL: " << ptest2;
+	cout << "USING == OPERATOR - " << endl;
+	cout << "first polynomial == second polynomial" << boolalpha << (ptest1 == ptest2) << endl;
+	cout << "first polynomial == third polynomial" << boolalpha << (ptest1 == ptest3) << endl;
+	cout << "third polynomial == second polynomial" << boolalpha << (ptest3 == ptest2) << endl;
+
+	cout << "USING != OPERATOR - " << endl;
+	cout << "first polynomial != second polynomial" << boolalpha << (ptest1 != ptest2) << endl;
+	cout << "first polynomial != third polynomial" << boolalpha << (ptest1 != ptest3) << endl;
+	cout << "third polynomial != second polynomial" << boolalpha << (ptest3 != ptest2) << endl;
+
+	// TESTING USAGE OF += and -= operators
+	cout << "TESTING USAGE OF += AND -= OPERATORS";
+	cout << endl << "Test1 Polynomial - " << ptest1 << '\t' << "Test2 Polynomial - " << ptest2 << endl;	// printing them out
+	ptest1 += ptest2;																// using overloaded += operator
+	cout << "New ptest1 Quadratic after being operated on by += operator - "
+		<< ptest1 << endl;														// printing the polynomial on which overloaded += was used													
+	ptest1 -= ptest2;																// using overloaded -= operator
+	cout << "New ptest1 polynomial after being operated on by -= operator - "
+		<< ptest1 << endl;	// printing the polynomial on which overloaded -= was used
+
+	cout << "TESTING DONE!!";
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }

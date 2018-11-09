@@ -6,6 +6,7 @@ Quadratic::Quadratic()
 
 Quadratic::Quadratic(int a, int b, int c)
 {
+	// adding int parameters to the array of coeffecients
 	coeffecients[0] = a;
 	coeffecients[1] = b;
 	coeffecients[2] = c;
