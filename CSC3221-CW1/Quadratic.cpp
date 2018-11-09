@@ -1,5 +1,9 @@
 #include "Quadratic.h"
 
+Quadratic::Quadratic()
+{
+}
+
 Quadratic::Quadratic(int a, int b, int c)
 {
 	coeffecients[0] = a;
@@ -38,7 +42,7 @@ bool Quadratic::operator==(Quadratic& rhs)
 
 bool Quadratic::operator!=(Quadratic& rhs)
 {
-	if (coeffecients[0] != rhs.coeffecient(0) || coeffecients[1] == rhs.coeffecient(1) || coeffecients[2] == rhs.coeffecient(2))
+	if (coeffecients[0] != rhs.coeffecient(0) || coeffecients[1] != rhs.coeffecient(1) || coeffecients[2] != rhs.coeffecient(2))
 		return true;
 
 	return false;
@@ -64,6 +68,7 @@ istream &operator>>(istream &inStream, Quadratic & q)
 {
 	int x, y, z = 0;
 	char separator = ',';
+	cout << "Enter coefficient values starting from the constant separated by commas: (Ex.: 1,2,3)";
 	inStream >> x >> separator >> y >> separator >> z;
 	q = Quadratic(x, y, z);
 	return inStream;
@@ -71,5 +76,6 @@ istream &operator>>(istream &inStream, Quadratic & q)
 
 ostream & operator<<(ostream & outStream, Quadratic & q)
 {
+	outStream << "The quadratic is: " << noshowpos << q.coeffecient(2) << "x2 " << showpos << " " << q.coeffecient(1) << "x " << showpos << " " << q.coeffecient(0);
 	return outStream;
 }

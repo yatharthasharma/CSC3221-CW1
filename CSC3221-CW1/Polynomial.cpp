@@ -1,7 +1,5 @@
 #include "Polynomial.h"
 
-
-
 Polynomial::Polynomial(int maxpower, int* allcoeffecients) {
 	power = maxpower;
 	totalValue = 0;
@@ -54,6 +52,12 @@ Polynomial Polynomial::operator-(Polynomial & rhs)
 	for (int i = 0; i <= rhs.power; i++)
 		difference[i] -= rhs.coeffecients[i];
 	return Polynomial(polyPower, difference);
+}
+
+Polynomial Polynomial::operator*(Polynomial & rhs)
+{
+	int* x = 0;
+	return Polynomial(0, x);
 }
 
 bool Polynomial::operator==(Polynomial & rhs)
@@ -111,6 +115,12 @@ Polynomial Polynomial::operator-=(Polynomial & rhs)
 	for (int i = 0; i <= rhs.power; i++)
 		difference[i] -= rhs.coeffecients[i];
 	return Polynomial(polyPower, difference);
+}
+
+Polynomial Polynomial::operator*=(Polynomial & rhs)
+{
+	int* x = 0;
+	return Polynomial(0, x);
 }
 
 istream & operator>>(istream & inStream, Polynomial & q)
